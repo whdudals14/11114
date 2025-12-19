@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>UI & SQL 포트폴리오</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #f5f7fa;
+            color: #333;
+        }
+
+        header {
+            background: #1f2937;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #cbd5e1;
+        }
+
+        section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        h2 {
+            border-left: 6px solid #3b82f6;
+            padding-left: 12px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+
+        .skill-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .skill {
+            background: #eff6ff;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        pre {
+            background: #111827;
+            color: #d1d5db;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #6b7280;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>조영민</h1>
+    <p>UI 구현 & SQL 작성을 소개하는 홈페이지 </p>
+</header>
+<section>
+    <h2>UI 구현 역량</h2>
+    <div class="skill-list">
+        <div class="skill">HTML5 / CSS3</div>
+        <div class="skill">반응형 UI</div>
+        <div class="skill">Flex / Grid</div>
+        <div class="skill">UI 컴포넌트 설계</div>
+    </div>
+
+    <div class="card">
+        <p>
+            ✔ 시맨틱 마크업 기반 UI 구성<br>
+            ✔ 모바일 / 데스크탑 반응형 레이아웃 구현<br>
+            ✔ 재사용 가능한 컴포넌트 단위 설계
+        </p>
+    </div>
+</section>
+
+<section>
+    <h2>SQL 작성 역량</h2>
+    <div class="skill-list">
+        <div class="skill">SELECT / JOIN</div>
+        <div class="skill">서브쿼리</div>
+        <div class="skill">집계 함수</div>
+        <div class="skill">인덱스 이해</div>
+    </div>
+
+    <div class="card">
+        <p>예시 SQL 쿼리</p>
+        <pre>
+SELECT 
+    u.user_name,
+    COUNT(o.order_id) AS order_count
+FROM users u
+JOIN orders o ON u.user_id = o.user_id
+WHERE o.order_date >= '2024-01-01'
+GROUP BY u.user_name
+HAVING COUNT(o.order_id) >= 3
+ORDER BY order_count DESC;
+        </pre>
+    </div>
+</section>
+
+<footer>
+    2025 조영민 | GitHub Pages
+</footer>
+
+</body>
+</html>
